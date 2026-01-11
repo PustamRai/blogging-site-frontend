@@ -131,14 +131,14 @@ Incorporating these libraries can significantly improve your projects' functiona
   },
 ];
 
-export function getBlogBySlug(slug: string): Blog | undefined {
-  return blogs.find((blog) => blog.slug === slug);
+export function getBlogBySlug(id: number): Blog | undefined {
+  return blogs.find((blog) => blog.id === id);
 }
 
-export function generateSlug(title: string): string {
-  return title
-    .toLowerCase()
-    .replace(/[^\w\s-]/g, "")
-    .replace(/\s+/g, "-")
-    .replace(/-+/g, "-");
-}
+// export function generateSlug(title: string): string {
+//   return title
+//     .toLowerCase()
+//     .replace(/[^\w\s-]/g, "")
+//     .replace(/\s+/g, "-")
+//     .replace(/-+/g, "-");
+// }

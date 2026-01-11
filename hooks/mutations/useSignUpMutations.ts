@@ -86,11 +86,11 @@ export const useDeleteBlogsMutation = (blogId: string) => {
 };
 
 // Update Blog
-export const useUpdateBlogsMutation = (blogId: string) => {
+export const useUpdateBlogsMutation = () => {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: (payload: CreateBlogPayloadProps) =>
+    mutationFn: ({blogId, payload}: {blogId: string, payload: CreateBlogPayloadProps}) =>
       updateBlog(blogId, payload),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["myBlogs"] });
